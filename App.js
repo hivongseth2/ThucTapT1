@@ -19,8 +19,7 @@ export default function App() {
   return (
     <ProgressProvider>
       <NavigationContainer onReady={handleNavigatorReady}>
-        <StatusBar barStyle="dark-content" />
-
+        <View style={{ backgroundColor: "black", height: 30 }}></View>
         <View
           style={[
             Style.container,
