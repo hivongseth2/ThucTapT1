@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     color: "#8F8F8F",
     fontWeight: "bold",
     marginVertical: 5,
-    marginLeft: 20,
+    // marginLeft: 20,
     alignSelf: "flex-start",
   },
 });

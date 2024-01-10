@@ -26,7 +26,6 @@ const Style = StyleSheet.create({
   BackIcon: {
     height: 20,
     width: 20,
-    color: "#fff",
   },
   VContainer: {
     alignItems: "center",

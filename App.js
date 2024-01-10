@@ -10,7 +10,7 @@ import {
 import ThongTinXe from "./Views/ThongTinXe";
 import Style from "./assets/Style/Style";
 import Header from "./Component/Header";
-import { ProgressProvider } from "./Component/ProgessContext";
+import { ProgressProvider, useProgress } from "./Component/ProgessContext";
 import StepsProgess from "./Component/StepsProgess";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -19,14 +19,20 @@ import BaoGia from "./Views/BaoGia";
 import ThongTin from "./Views/ThongTin";
 import XacNhan from "./Views/XacNhan";
 import Router from "./router/Router";
+import { useState } from "react";
 export default function App() {
   const Stack = createNativeStackNavigator();
+  const [isNavigatorReady, setNavigatorReady] = useState(false);
+
+  const handleNavigatorReady = () => {
+    setNavigatorReady(true);
+  };
 
   return (
     <ProgressProvider>
-      {/* <StatusBar barStyle="dark-content" /> */}
+      <NavigationContainer onReady={handleNavigatorReady}>
+        <StatusBar barStyle="dark-content" />
 
-      <NavigationContainer>
         <View
           style={[
             Style.container,
@@ -34,12 +40,7 @@ export default function App() {
           ]}
         >
           <Header></Header>
-          <View
-            style={{
-              flex: 1,
-              width: "100%",
-            }}
-          >
+          {isNavigatorReady && (
             <View style={{ flexDirection: "row", justifyContent: "center" }}>
               <StepsProgess step={1} name={"Thông tin xe"} />
               <StepsProgess step={2} name={"Quyền lợi"} />
@@ -47,7 +48,8 @@ export default function App() {
               <StepsProgess step={4} name={"Thông tin bảo hiểm"} />
               <StepsProgess step={5} name={"Xác nhận"} end={true} />
             </View>
-
+          )}
+          <View style={{ flex: 1, width: "100%" }}>
             <Stack.Navigator>
               <Stack.Screen
                 name="Xe"
@@ -59,7 +61,6 @@ export default function App() {
                 component={QuyenLoi}
                 options={{ headerShown: false, headerShadowVisible: false }}
               />
-
               <Stack.Screen
                 name="BaoGia"
                 component={BaoGia}
