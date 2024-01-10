@@ -117,6 +117,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 10,
+    marginLeft: -20,
   },
   label: {
     fontSize: 10,

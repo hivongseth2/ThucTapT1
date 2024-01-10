@@ -10,7 +10,6 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import Style from "../assets/Style/Style";
 import StyleTT from "../assets/Style/StyleTT";
-import SliderComponent from "../Component/SliderComponent";
 import BHXe from "../Component/CheckBox";
 import BaoHiemXe from "../Component/BaoHiemXe";
 import BaoHiemXeBS from "../Component/BaoHiemXeBS";

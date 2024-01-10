@@ -2,7 +2,6 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import Style from "../assets/Style/Style";
 import StyleTT from "../assets/Style/StyleTT";
-import SliderComponent from "./SliderComponent";
 import SliderCustom from "./SliderCustom";
 export default function ThamGia() {
   return (
